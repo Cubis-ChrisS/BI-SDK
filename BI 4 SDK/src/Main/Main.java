@@ -1,4 +1,4 @@
-package rest.json;
+package Main;
 
 
 import java.io.BufferedReader;
@@ -22,12 +22,13 @@ import org.json.JSONObject;
 import org.json.simple.parser.JSONParser;
 import org.json.simple.parser.ParseException;
 
+import rest.json.BOGetPropertyValues;
 import entities.bo.Folders;
 import entities.bo.InfoStore;
 import entities.bo.LogonForm;
 import entities.bo.Query;
 
-public class testApp {
+public class Main {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
@@ -42,7 +43,7 @@ public class testApp {
 		
 		//Get User and Password information
 		BOGetPropertyValues properties = new BOGetPropertyValues();
-		prop = properties.getProp;
+		prop = properties.getPropValues();
 		userName = prop.getProperty("user");
 		password = prop.getProperty("password");
 		

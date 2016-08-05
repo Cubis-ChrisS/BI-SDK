@@ -9,18 +9,18 @@ import java.util.Properties;
 public class BOGetPropertyValues {
 	
 	InputStream inputStream;
-	Properties getProp = new Properties();
+	private Properties prop;
 	
 	public BOGetPropertyValues() {
 		try {
-			getProp = this.getPropValues(getProp);
+			prop = this.setPropValues(prop);
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 	}
  
-	public Properties getPropValues(Properties prop) throws IOException {
+	public Properties setPropValues(Properties prop) throws IOException {
 		
 
 		try {
@@ -43,6 +43,10 @@ public class BOGetPropertyValues {
 		} finally {
 			inputStream.close();
 		}
+		return prop;
+	}
+	
+	public Properties getPropValues() {
 		return prop;
 	}
 
