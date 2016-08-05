@@ -3,17 +3,18 @@ package rest.json;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.InputStream;
-import java.util.Date;
 import java.util.Properties;
 
-public class BOGetPropertyValues {
+public class BOPropertyValues {
 	
 	InputStream inputStream;
-	private Properties prop;
+	Properties prop;
 	
-	public BOGetPropertyValues() {
+	public BOPropertyValues() {
+		
+		Properties prop = new Properties();
 		try {
-			prop = this.setPropValues(prop);
+			this.prop = this.setPropValues(prop);
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -23,7 +24,9 @@ public class BOGetPropertyValues {
 	public Properties setPropValues(Properties prop) throws IOException {
 		
 
+	
 		try {
+			
 
 			String propFileName = "config.properties";
  
@@ -43,11 +46,13 @@ public class BOGetPropertyValues {
 		} finally {
 			inputStream.close();
 		}
+		
 		return prop;
+
 	}
 	
 	public Properties getPropValues() {
-		return prop;
+		return this.prop;
 	}
 
 }

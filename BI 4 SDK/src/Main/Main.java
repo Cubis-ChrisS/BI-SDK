@@ -22,7 +22,7 @@ import org.json.JSONObject;
 import org.json.simple.parser.JSONParser;
 import org.json.simple.parser.ParseException;
 
-import rest.json.BOGetPropertyValues;
+import rest.json.BOPropertyValues;
 import entities.bo.Folders;
 import entities.bo.InfoStore;
 import entities.bo.LogonForm;
@@ -42,10 +42,9 @@ public class Main {
 		String folderName = null;
 		
 		//Get User and Password information
-		BOGetPropertyValues properties = new BOGetPropertyValues();
-		prop = properties.getPropValues();
-		userName = prop.getProperty("user");
-		password = prop.getProperty("password");
+		BOPropertyValues properties = new BOPropertyValues();
+		userName = properties.getPropValues().getProperty("user");
+		password = properties.getPropValues().getProperty("password");
 		
 		//Create LogonForm instance
 		LogonForm form = new LogonForm(baseURL);
